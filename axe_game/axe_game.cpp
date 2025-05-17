@@ -2,6 +2,13 @@
 
 int main()
 {
+	float root_beer;
+	root_beer = 1.99;
+	double cheese_burger;
+	cheese_burger = 6.99;
+	bool shouldHaveLunch;
+	shouldHaveLunch = true;
+
 	int width;
 	width = 350;
 	InitWindow(350, 200, "Rama's Window!");
