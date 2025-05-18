@@ -2,11 +2,19 @@
 
 int main()
 {
-	float root_beer = 1.99;
-	
-	double cheese_burger{ 6.99 };
-	
-	bool shouldHaveLunch{};
+	// initialize window
+	// false
+	bool equal{ 4 == 9 };
+	// true
+	bool notEqual{ 4 != 9 };
+	// true
+	bool less{ 4 < 9 };
+	// false
+	bool greater{ 4 > 9 };
+	// true
+	bool lessEqual{ 4 <= 9 };
+	// false
+	bool greaterEqual{ 4 >= 9 };
 
 	int width;
 	width = 350;
