@@ -6,10 +6,13 @@ int main()
 	width = 350;
 	InitWindow(350, 200, "Rama's Window!");
 
-	while (true)
+	while (WindowShouldClose() != true)
 	{
+		
 		BeginDrawing();
-		ClearBackground(RED);
+		ClearBackground(WHITE);
+
+		DrawCircle(175, 100, 50, GREEN);
 		EndDrawing();
 	}
 }
