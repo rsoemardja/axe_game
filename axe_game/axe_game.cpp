@@ -6,13 +6,25 @@ int main()
 	width = 350;
 	InitWindow(350, 200, "Rama's Window!");
 
+	int circle_x{ 175 };
+	int circle_y{ 100 };
+
 	while (WindowShouldClose() != true)
 	{
 		
 		BeginDrawing();
 		ClearBackground(WHITE);
 
-		DrawCircle(175, 100, 50, GREEN);
+		DrawCircle(circle_x,circle_y, 50, GREEN);
+
+		if  (IsKeyDown(KEY_D))
+		{
+			circle_x = circle_x + 10;
+		}
+		if  (IsKeyDown(KEY_A))
+		{
+			circle_x = circle_x - 10;
+		}
 		EndDrawing();
 	}
 }
