@@ -1,20 +1,13 @@
-ï»¿cmake_minimum_required(VERSION 3.5)
-
-project(MyRaylibProject)
+cmake_minimum_required(VERSION 3.5)
+project(axe_game)
 
 set(CMAKE_CXX_STANDARD 11)
 
-# Add the executable from your source file(s)
-add_executable(MyRaylibProject Source\main.cpp)
+# Add raylib source as a subdirectory
+add_subdirectory(raylib)
 
-# Specify where to find raylib
-set(RAYLIB_PATH "C:/raylib")
+# Add your game executable — match the actual path
+add_executable(axe_game axe_game/axe_game.cpp)
 
-# Include raylib headers
-target_include_directories(MyRaylibProject PRIVATE "${RAYLIB_PATH}/include")
-
-# Link raylib library
-target_link_libraries(MyRaylibProject "${RAYLIB_PATH}/lib/raylib.lib")
-
-# Link Windows system libs needed by raylib
-target_link_libraries(MyRaylibProject winmm.lib kernel32.lib gdi32.lib opengl32.lib)
+# Link raylib to your project
+target_link_libraries(axe_game raylib)
