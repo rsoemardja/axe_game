@@ -6,20 +6,32 @@ int main()
 	width = 350;
 	InitWindow(350, 200, "Rama's Window!");
 
+	// circle coordinates
 	int circle_x{ 175 };
 	int circle_y{ 100 };
 
+	// axe coordinates
 	int axe_x{ 400 };
 	int axe_y{ 0 };
+
+	int direction{ 10 };
 
 	while (WindowShouldClose() != true)
 	{
 		
 		BeginDrawing();
 		ClearBackground(WHITE);
+		 // Game logic
 
 		DrawCircle(circle_x,circle_y, 50, GREEN);
 		DrawRectangle(axe_x, axe_y, 50, 50, BLUE);
+
+		// Move the axe
+		axe_y += direction;
+		if (axe_y > 450 || axe_y < 0)
+		{
+			direction = -direction;
+		}
 
 		if  (IsKeyDown(KEY_D) && circle_x < 350)
 		{
