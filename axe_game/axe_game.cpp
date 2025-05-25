@@ -27,7 +27,7 @@ int main()
 	int u_axe_y{ axe_y };
 	int b_axe_y{ axe_y + axe_length };
 
-
+	// direction of the axe movement
 	int direction{ 10 };
 
 	bool collision_with_axe = 
