@@ -1,5 +1,5 @@
 #include "raylib.h"
-
+// Congrations! You have successfully created a simple game using raylib.
 int main()
 {
 	// window dimensions and initialization
