@@ -2,16 +2,15 @@
 
 int main()
 {
-	int width;
-	width = 350;
-	int height;
-	height = 200;
+	// window dimensions and initialization
+	int width{ 800 };
+	int height{ 450 };
 	InitWindow(350, 200, "Rama's Window!");
 
 	// circle coordinates
-	int circle_x{ 175 };
-	int circle_y{ 100 };
-	int circle_radius{ 50 };
+	int circle_x{ 200 };
+	int circle_y{ 200 };
+	int circle_radius{ 25 };
 	// circle edge coordinates
 	int l_circle_x{ circle_x - circle_radius };
 	int r_circle_x{ circle_x + circle_radius };
@@ -36,9 +35,10 @@ int main()
 						(u_axe_y <= b_circle_y) && 
 						(r_axe_x >= l_circle_x) && 
 						(l_axe_x <= r_circle_x);
-
+	
+	// Frame rate set to 60 FPS
 	SetTargetFPS(60);
-	while (WindowShouldClose() != true)
+	while (WindowShouldClose() == false)
 	{
 		
 		BeginDrawing();
