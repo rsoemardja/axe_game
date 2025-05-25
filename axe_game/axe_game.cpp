@@ -31,7 +31,7 @@ int main()
 
 	int direction{ 10 };
 
-	bool collision_with_axe{ true };
+	bool collision_with_axe{ false };
 
 	while (WindowShouldClose() != true)
 	{
@@ -39,12 +39,12 @@ int main()
 		BeginDrawing();
 		ClearBackground(WHITE);
 
-		if (collision_with_axe)
-		{
+			if (collision_with_axe)
+			{
 			DrawText("Gme Over!", 400, 200, 20, RED);
-		}
-		else
-		{
+			}
+			else
+			{
 			// Game logic
 
 			DrawCircle(circle_x, circle_y, 50, GREEN);
