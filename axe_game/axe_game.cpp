@@ -31,32 +31,46 @@ int main()
 
 	int direction{ 10 };
 
+	bool collision_with_axe{ true };
+
 	while (WindowShouldClose() != true)
 	{
 		
 		BeginDrawing();
 		ClearBackground(WHITE);
-		 // Game logic
 
-		DrawCircle(circle_x,circle_y, 50, GREEN);
-		DrawRectangle(axe_x, axe_y, axe_length, 50, BLUE);
+		if (collision_with_axe)
+		{
+			DrawText("Gme Over!", 400, 200, 20, RED);
+		}
+		else
+		{
+			// Game logic
 
-		// Move the axe
-		axe_y += direction;
-		if (axe_y > height || axe_y < 0)
-		{
-			direction = -direction;
+			DrawCircle(circle_x, circle_y, 50, GREEN);
+			DrawRectangle(axe_x, axe_y, axe_length, 50, BLUE);
+
+			// Move the axe
+			axe_y += direction;
+			if (axe_y > height || axe_y < 0)
+			{
+				direction = -direction;
+			}
+
+			// direct the axe and collision detection
+			if (IsKeyDown(KEY_D) && circle_x < width)
+			{
+				circle_x += 10;
+			}
+			if (IsKeyDown(KEY_A) && circle_x < 0)
+			{
+				circle_x -= 10;
+			}
+
+			// Game Logic Ends here
 		}
-		
-		// direct the axe and collision detection
-		if  (IsKeyDown(KEY_D) && circle_x < width)
-		{
-			circle_x += 10;
-		}
-		if  (IsKeyDown(KEY_A) && circle_x < 0)
-		{
-			circle_x -= 10;
-		}
+
+
 		EndDrawing();
 	}
 }
